@@ -73,15 +73,12 @@ class MyHomePage extends StatelessWidget {
   }
   Widget _btn(BuildContext context, Locale locale, Locale currentLocale) {
     final isActive = locale.languageCode == currentLocale.languageCode;
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              primary: isActive
-                  ? Theme.of(context).colorScheme.secondary
-                  : Theme.of(context).disabledColor),
-          onPressed: () => context.setLocale(locale),
-          child: Text(locale.languageCode)),
-    );
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            primary: isActive
+                ? Theme.of(context).colorScheme.secondary
+                : Theme.of(context).disabledColor),
+        onPressed: () => context.setLocale(locale),
+        child: Text(locale.languageCode));
   }
 }
